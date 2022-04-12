@@ -49,6 +49,14 @@ The train data (train.json) has the following fields for each example:
 - `voa_example_id`: VOA Corpus example ID
 - `voa_image_id`: Image ID within VOA corpus      
 
+### Pre-processed IE outputs
+                                                         
+We will be releasing the multi-modal grounding and text IE outputs shortly.
+                                                         
+### Baselines  
+                                                         
+We will be releasing the code for the baselines shortly.
+                                                         
 ### Eval
 
 The output predictions need to be dictionary with the `Example ID` as the key and the answer string as the value. We use a SQuAD-style string F1 metric for evaluation.
