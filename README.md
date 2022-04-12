@@ -3,7 +3,7 @@
 ## Overview
 
 <p align="center">
-  <img src="dataset.png alt="Photo" style="width="100%;"/>
+  <img src="dataset.png" alt="Photo" style="width="100%;"/>
 </p>
 
 This repository contains code and data for the AAAI 2022 paper:
@@ -47,4 +47,29 @@ The train data (train.json) has the following fields for each example:
 - `bridge_start`: Start character offset for bridge answer span within `caption`
 - `bridge_end`: End character offset (inclusive) for bridge answer span within `caption`
 - `voa_example_id`: VOA Corpus example ID
-- `voa_image_id`: Image ID within VOA corpus                                                
+- `voa_image_id`: Image ID within VOA corpus      
+
+### Eval
+
+The output predictions need to be dictionary with the `Example ID` as the key and the answer string as the value. We use a SQuAD-style string F1 metric for evaluation.
+
+To run evaluation on with the final answer as predictions:
+```
+python mmqa_eval.py <path to gold file> <path to predictions file> 
+```
+
+To run evaluation on with the bridge answer as predictions:
+```
+python mmqa_eval.py <path to gold file> <path to predictions file> --bridge_eval
+```                                                         
+                                                         
+### Citation
+
+If you used this dataset in your work, please consider citing our paper:
+```
+@article{reddy2021mumuqa,
+  title={MuMuQA: Multimedia Multi-Hop News Question Answering via Cross-Media Knowledge Extraction and Grounding},
+  author={Reddy, Revanth Gangi and Rui, Xilin and Li, Manling and Lin, Xudong and Wen, Haoyang and Cho, Jaemin and Huang, Lifu and Bansal, Mohit and Sil, Avirup and Chang, Shih-Fu and others},
+  journal={arXiv preprint arXiv:2112.10728},
+  year={2021}
+}                                                    
